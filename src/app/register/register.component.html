@@ -1,0 +1,50 @@
+<div class="container">
+  <mat-card
+    style="
+      background-color: rgb(0, 0, 0);
+      border-radius: 4px;
+      max-width: fit-content;
+    "
+  >
+    <mat-card-title style="color: aliceblue"
+      >Register information</mat-card-title
+    >
+  </mat-card>
+  <br />
+  <br />
+  <form [formGroup]="registerForm" (ngSubmit)="register(Username, Userpassword)">
+    <mat-form-field class="example-full-width" appearance="fill">
+      Email
+      <input
+        matInput
+        formControlName="email"
+        [(ngModel)]="Username"
+        name="email"
+        style="background-color: transparent !important"
+      />
+      <mat-error *ngIf="registerForm.value.email"
+        >Email syntax is not correct.</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      Password
+      <input
+        matInput
+        formControlName="password"
+        [(ngModel)]="Userpassword"
+        name="password"
+        type="password"
+        style="background-color: transparent"
+      />
+      <mat-error *ngIf="registerForm.value.password"
+        >Password must be a combination of lower-case, upper-case, numbers and
+        at least 5 characters long</mat-error
+      >
+    </mat-form-field>
+
+    <button mat-flat-button type="submit" [disabled]="!registerForm.valid">
+      Register<mat-icon>chevron_right</mat-icon>
+    </button>
+  </form>
+</div>

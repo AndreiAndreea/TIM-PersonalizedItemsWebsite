@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+<div class="slider-section">
+  <div class="container-slider">
+    <drag-scroll #nav>
+      <img
+        drag-scroll-item
+        src="assets/images/products/buy1.jpg"
+        alt="Product 1"
+      />
+      <img
+        drag-scroll-item
+        src="assets/images/products/buy2.jpg"
+        alt="Product 2"
+      />
+      <img
+        drag-scroll-item
+        src="assets/images/products/buy3.jpg"
+        alt="Product 3"
+      />
+      <img
+        drag-scroll-item
+        src="assets/images/products/buy4.jpg"
+        alt="Product 4"
+      />
+      <img
+        drag-scroll-item
+        src="assets/images/products/buy5.jpg"
+        alt="Product 5"
+      />
+      <img
+        drag-scroll-item
+        src="assets/images/products/buy6.jpg"
+        alt="Product 6"
+      />
+    </drag-scroll>
+  </div>
+</div>
+
+<div class="choice-form">
+  <h2>Make Your Choice</h2>
+  <form (submit)="submitChoice()">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="productChoice">Choose the Object:</label>
+      <select
+        id="productChoice"
+        name="productChoice"
+        [(ngModel)]="selectedProduct"
+      >
+        <option value="Cup">Cup</option>
+        <option value="T-shirt">T-shirt</option>
+        <option value="Phonecase">Phone Case</option>
+        <option value="Invitation">Invitation</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="uploadPhoto">Upload Your Photo:</label>
+      <input
+        type="file"
+        id="uploadPhoto"
+        name="uploadPhoto"
+        accept="image/*"
+        (change)="handleFileInput($event)"
+      />
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

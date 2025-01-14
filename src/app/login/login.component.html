@@ -1,0 +1,43 @@
+<!-- <p>login works!</p>
+<div *ngFor="let user of UsersList">
+  <p>{{ user.UserId }} - {{ user.Username }} - {{ user.Userpassword }}</p>
+</div> -->
+
+
+<!-- <mat-card style="background-color: rgb(0, 0, 0);">
+  <mat-card-title style="color:aliceblue">Login information</mat-card-title>
+</mat-card> -->
+<!-- <form [formGroup]="registerForm" (ngSubmit)="login(email, password)">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" [(ngModel)]="email" required>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" [(ngModel)]="password" required>
+
+  <button type="submit">Login</button>
+</form> -->
+
+<div class="container">
+  <mat-card style="background-color: rgb(0, 0, 0);border-radius: 4px; max-width: fit-content;">
+      <mat-card-title style="color:aliceblue">Login information</mat-card-title>
+  </mat-card>
+  <br>
+  <br>
+  <form [formGroup]="registerForm" (ngSubmit)="login(email, password)">
+      <mat-form-field class="example-full-width" appearance="fill">
+          Email
+          <input matInput formControlName="email" [(ngModel)]="email" name="email" style="background-color: transparent !important;">
+          <mat-error *ngIf="registerForm.value.email">Email syntax is not correct.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+          Password
+          <input matInput formControlName="password" [(ngModel)]="password" name="password" type="password" style="background-color: transparent;">
+          <mat-error *ngIf="registerForm.value.password">Password must be a combination of lower-case, upper-case,
+              numbers and at least 5 characters long</mat-error>
+      </mat-form-field>
+
+      <button mat-flat-button  type="submit" [disabled]="!registerForm.valid" >Login<mat-icon>chevron_right</mat-icon></button>
+  </form>
+
+</div>

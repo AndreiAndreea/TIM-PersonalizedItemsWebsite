@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.matLable{
+  color: blue;
+  margin-top: 15px !important ;
+}
+
+mat-card {
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  padding: 20px; /* Add padding for better spacing */
+}
+
+mat-form-field {
+  width: 100%;
+  margin-top: 15px;
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+button {
+  margin-top: 20px;
+  background-color: rgb(224, 140, 130) !important;
+  border-radius: 4px;
+}
+button[disabled] {
+  margin-top: 20px;
+  background-color: rgb(232, 217, 216) !important;
+  border-radius: 4px;
+}
+
+/* Optional: Adjust styles for error messages */
+mat-error {
+  font-size: 12px;
+  color: rgb(135, 25, 25);
+  margin-top: 5px;
+}
+
+/* Optional: Style for disabled button */
+/* button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: royalblue;
+} */
